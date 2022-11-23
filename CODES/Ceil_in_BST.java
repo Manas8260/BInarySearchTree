@@ -31,5 +31,22 @@ public class Ceil_in_BST {
 		}
 		return ceil;
 	}
+	static int findFloor(Node root,int key) {
+		int flr = -1;
+		while(root != null) {
+			if(root.data == key) {
+				flr = root.data;
+				return flr;
+			}
+			if(key < root.data)
+				root = root.left;
+			else{
+				flr = root.data;
+				root = root.right;
+				
+			}
+		}
+		return flr;
+	}
 
 }
